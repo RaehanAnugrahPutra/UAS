@@ -27,3 +27,36 @@ string generateKodeBooking() {
 bool validasiUmur(int usia) {
     return usia > 5;
 }
+void tambahPengunjung() {
+    Pengunjung p;
+
+    cout << "Masukkan nama pengunjung: ";
+    getline(cin, p.nama);
+
+    cout << "Masukkan usia pengunjung: ";
+    cin >> p.usia;
+    cin.ignore();
+
+    if (!validasiUmur(p.usia)) {
+        cout << "Error: Usia pengunjung harus lebih dari 5 tahun!" << endl;
+        return;
+    }
+
+    cout << "Masukkan jenis kelamin pengunjung: ";
+    getline(cin, p.jenisKelamin);
+
+    cout << "Masukkan nomor telepon pengunjung: ";
+    getline(cin, p.nomorTelepon);
+
+    cout << "Masukkan tanggal kunjungan (DD/MM/YYYY): ";
+    getline(cin, p.tanggalKunjungan);
+
+    cout << "Masukkan jenis tiket (reguler/VIP): ";
+    getline(cin, p.jenisTiket);
+
+    p.kodeBooking = generateKodeBooking();
+
+    pengunjungList.push_back(p);
+
+    cout << "Pendaftaran berhasil! Kode booking: " << p.kodeBooking << endl;
+}
