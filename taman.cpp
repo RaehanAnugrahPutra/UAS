@@ -24,3 +24,6 @@ string generateKodeBooking() {
     }
     return kode;
 }
+bool validasiUmur(int usia) {
+    return usia > 5;
+}
