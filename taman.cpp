@@ -116,3 +116,41 @@ void daftarPengunjung() {
         }
     }
 }
+int main() {
+    srand(time(0));
+    int pilihan;
+
+    do {
+        cout << "Sistem Manajemen Pengelolaan Taman Wisata" << endl;
+        cout << "1. Tambah Pengunjung" << endl;
+        cout << "2. Cari Pengunjung" << endl;
+        cout << "3. Batalkan Kunjungan" << endl;
+        cout << "4. Daftar Pengunjung" << endl;
+        cout << "5. Keluar" << endl;
+        cout << "Masukkan pilihan: ";
+        cin >> pilihan;
+        cin.ignore();
+
+        switch (pilihan) {
+            case 1:
+                tambahPengunjung();
+                break;
+            case 2:
+                cariPengunjung();
+                break;
+            case 3:
+                batalkanKunjungan();
+                break;
+            case 4:
+                daftarPengunjung();
+                break;
+            case 5:
+                cout << "Terima kasih telah menggunakan sistem ini!" << endl;
+                break;
+            default:
+                cout << "Pilihan tidak valid!" << endl;
+        }
+    } while (pilihan != 5);
+
+    return 0;
+}
