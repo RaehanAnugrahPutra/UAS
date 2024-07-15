@@ -60,3 +60,25 @@ void tambahPengunjung() {
 
     cout << "Pendaftaran berhasil! Kode booking: " << p.kodeBooking << endl;
 }
+
+
+void cariPengunjung() {
+    string keyword;
+    cout << "Masukkan nama atau kode booking pengunjung: ";
+    getline(cin, keyword);
+
+    for (const auto &p : pengunjungList) {
+        if (p.nama == keyword || p.kodeBooking == keyword) {
+            cout << "Nama: " << p.nama << endl;
+            cout << "Usia: " << p.usia << endl;
+            cout << "Jenis Kelamin: " << p.jenisKelamin << endl;
+            cout << "Nomor Telepon: " << p.nomorTelepon << endl;
+            cout << "Tanggal Kunjungan: " << p.tanggalKunjungan << endl;
+            cout << "Jenis Tiket: " << p.jenisTiket << endl;
+            cout << "Kode Booking: " << p.kodeBooking << endl;
+            return;
+        }
+    }
+
+    cout << "Pengunjung tidak ditemukan!" << endl;
+}
