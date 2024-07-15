@@ -82,3 +82,19 @@ void cariPengunjung() {
 
     cout << "Pengunjung tidak ditemukan!" << endl;
 }
+
+void batalkanKunjungan() {
+    string kodeBooking;
+    cout << "Masukkan kode booking pengunjung yang akan dibatalkan: ";
+    getline(cin, kodeBooking);
+
+    for (auto it = pengunjungList.begin(); it != pengunjungList.end(); ++it) {
+        if (it->kodeBooking == kodeBooking) {
+            pengunjungList.erase(it);
+            cout << "Kunjungan berhasil dibatalkan!" << endl;
+            return;
+        }
+    }
+
+    cout << "Kode booking tidak ditemukan!" << endl;
+}
