@@ -98,3 +98,21 @@ void batalkanKunjungan() {
 
     cout << "Kode booking tidak ditemukan!" << endl;
 }
+void daftarPengunjung() {
+    string tanggalKunjungan, jenisTiket;
+    cout << "Masukkan tanggal kunjungan (DD/MM/YYYY): ";
+    getline(cin, tanggalKunjungan);
+    cout << "Masukkan jenis tiket (reguler/VIP): ";
+    getline(cin, jenisTiket);
+
+    for (const auto &p : pengunjungList) {
+        if (p.tanggalKunjungan == tanggalKunjungan && p.jenisTiket == jenisTiket) {
+            cout << "Nama: " << p.nama << endl;
+            cout << "Usia: " << p.usia << endl;
+            cout << "Jenis Kelamin: " << p.jenisKelamin << endl;
+            cout << "Nomor Telepon: " << p.nomorTelepon << endl;
+            cout << "Kode Booking: " << p.kodeBooking << endl;
+            cout << "--------------------------" << endl;
+        }
+    }
+}
